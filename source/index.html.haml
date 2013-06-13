@@ -1,1 +1,11 @@
-%h1 Hello world! This is HTML5 Boilerplate.
+- counter = 0
+- image_position = ""
+
+- for page in ["information","benefits","faqs","contact"]
+  - if counter % 2 == 0
+    - image_position = "left"
+  - else
+    - image_position = "right"
+
+  = partial "/partials/content", :locals => {:name => page, :image_position => image_position}
+  - counter+=1

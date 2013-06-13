@@ -1,8 +1,83 @@
 $light-blue: #00c9ff
 $gold: #ffe424
+$nav-text: #2e2903
 
+
+@mixin content
+  max-width: 950px
+  margin: 0 auto
+  padding: 0 10px
+
+@mixin zero
+  margin: 0
+  padding: 0  
+@mixin blue-shadow
+  text-shadow: 5px 5px 5px #0096be
+
+//Global Rules
+ul
+  @include zero
+
+
+//Header
 header
-  background-color: $light-blue
+  position: fixed
+  top: 0
+  width: 100%
+  .content
+    background-color: $light-blue
+    > .clearfix
+      @include content
+      img
+        float: left
+      h1
+        float: right
+        color: white
+        font-size: 55px
+        margin: 25px 0
+        @include blue-shadow
+    nav
+      background-color: $gold
+      ul
+        @include content
+        text-align: right
+      li
+        color: black
+        display: inline-block
+        margin: 3px 15px
+        &:last-child
+          margin-right: 0
+        a
+          color: $nav-text
+          font-size: 14px
+          font-weight: bold
+          text-decoration: none
+          &:hover
+            text-decoration: underline
 
-  nav
+//Main Content
+.main
+  @include content
+  margin-top: 180px
+
+//Footer
+footer
+  text-align: center
+  background-color: $light-blue
+  padding-bottom: 35px
+  .decorative-line
+    display: block
+    height: 27px
     background-color: $gold
+  .info
+    padding: 0 30px
+    color: white
+    @include content
+    span
+      @include blue-shadow
+      font-size: 200px
+      font-weight: bold
+      display: block
+      height: 160px
+    p
+      font-size: 20px
