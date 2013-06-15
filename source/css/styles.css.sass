@@ -1,6 +1,8 @@
 $light-blue: #00c9ff
 $gold: #ffe424
 $nav-text: #2e2903
+$placeholder: #888
+
 
 
 @mixin content
@@ -13,11 +15,43 @@ $nav-text: #2e2903
   padding: 0  
 @mixin blue-shadow
   text-shadow: 5px 5px 5px #0096be
+@mixin text-shadow
+  text-shadow: 5px 4px 10px #CCC
+@mixin fancy-font
+  font-family: 'Give You Glory', cursive
 
 //Global Rules
+body
+  color: #222
 ul
   @include zero
-
+li
+  list-style-position: inside
+  font-style: italic
+hr 
+  margin: 55px 0
+  &:last-child
+    display: none
+h2
+  font-size: 30px
+  margin-top: 0
+h3
+  display: inline-block
+dd
+  margin: 0 0 40px 0
+  &:last-child
+    margin-bottom: 0
+p
+  line-height: 1.6em
+//Placeholder Text
+::-webkit-input-Placeholder
+  color: $placeholder
+::-moz-placeholder
+  color: $placeholder
+::-moz-placeholder
+  color: $placeholder
+::-ms-input-placeholder
+  color: $placeholder
 
 //Header
 header
@@ -26,10 +60,12 @@ header
   width: 100%
   .content
     background-color: $light-blue
+    padding-top: 10px
     > .clearfix
       @include content
       img
         float: left
+        padding-left: 30px
       h1
         float: right
         color: white
@@ -42,6 +78,7 @@ header
         @include content
         text-align: right
       li
+        font-style: normal
         color: black
         display: inline-block
         margin: 3px 15px
@@ -55,10 +92,99 @@ header
           &:hover
             text-decoration: underline
 
-//Main Content
+//Main Content - Global
 .main
   @include content
-  margin-top: 180px
+  margin-top: 260px
+  img
+    box-shadow: 5px 5px 10px #999
+  .information
+    width: 490px
+    margin-right: 20px
+  .supplement
+    width: 410px
+    text-align: center
+  .left
+    .information
+      float: left
+      padding-left: 20px
+    .supplement
+      float: right
+  .right
+    .information
+      float: right
+    .supplement
+      float: left
+
+//Benefits
+#benefits
+  th
+    text-align: left
+  td
+    padding-left: 20px
+  td:nth-child(odd)
+    background: transparent url('http://lorempixel.com/15/17/nature/') no-repeat scroll 0 0
+    padding-right: 10px
+  td:nth-child(even)
+    background: transparent url('http://lorempixel.com/15/17/nature/') no-repeat scroll 0 0
+
+//FAQs
+#faqs
+  .supplement span
+    color: #222
+  .information span
+    color: lime
+  .percent
+    font-size: 200px
+    @include fancy-font
+    @include text-shadow
+    display: block
+    margin-top: 80px
+
+//Contact
+#contact
+  margin: 0 0 50px 0
+  .information
+    margin-right: 0
+  input[type=text], input[type=email], textarea
+    font-size: 20px
+    padding: 10px
+    background-color: #d5f6ff
+    border: 0
+    border-bottom: 5px solid #ffe424
+    margin: 0 0 30px 0
+    box-shadow: 2px 4px 6px #BBB
+    color: #222
+    width: 375px
+  button
+    width: 15em
+    padding: .5em
+    color: #ffffff
+    border: solid thin rgb(226, 226, 226)
+    -webkit-border-radius: .7em
+    -moz-border-radius: .7em
+    border-radius: .7em
+    background: #dadada /* Old browsers */
+    background: -moz-linear-gradient(top,  #dadada 0%, #74a6cf 50%, #20a1ca 51%, #7db9e8 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dadada), color-stop(50%,#74a6cf), color-stop(51%,#20a1ca), color-stop(100%,#7db9e8)) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dadada 0%,#74a6cf 50%,#20a1ca 51%,#7db9e8 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dadada 0%,#74a6cf 50%,#20a1ca 51%,#7db9e8 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dadada 0%,#74a6cf 50%,#20a1ca 51%,#7db9e8 100%) /* IE10+ */
+    background: linear-gradient(to bottom,  #dadada 0%,#74a6cf 50%,#20a1ca 51%,#7db9e8 100%) /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#7db9e8',GradientType=0 ) /* IE6-9 */
+    &:hover
+      background: #dadada /* Old browsers */
+      background: -moz-linear-gradient(top,  #dadada 0%, #4fcc62 50%, #20c95b 51%, #7ae284 100%) /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dadada), color-stop(50%,#4fcc62), color-stop(51%,#20c95b), color-stop(100%,#7ae284)) /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #dadada 0%,#4fcc62 50%,#20c95b 51%,#7ae284 100%) /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #dadada 0%,#4fcc62 50%,#20c95b 51%,#7ae284 100%) /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #dadada 0%,#4fcc62 50%,#20c95b 51%,#7ae284 100%) /* IE10+ */
+      background: linear-gradient(to bottom,  #dadada 0%,#4fcc62 50%,#20c95b 51%,#7ae284 100%) /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#7ae284',GradientType=0 ) /* IE6-9 */
+
+
+  .signature
+    @include fancy-font
 
 //Footer
 footer
