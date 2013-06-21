@@ -5,9 +5,9 @@ This repository will host files for the 7th street parking campaign. The goal is
 ## Tools
 As of this commit:
 
-- [ ] (Apache)[http://www.apache.org/]
-- [ ] PHP for mail - will use (PHP Mailer)[https://github.com/PHPMailer/PHPMailer]
-- [X] (Middleman)[https://github.com/middleman/middleman] (HAML, SASS)
+- [ ] [Apache](http://www.apache.org/)
+- [ ] PHP for mail - will use [PHP Mailer](https://github.com/PHPMailer/PHPMailer)
+- [X] [Middleman](https://github.com/middleman/middleman) HAML, SASS
 
 ##TODO
 
